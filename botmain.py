@@ -14,6 +14,7 @@ client = commands.Bot(command_prefix = '!')
 async def on_ready():
     print('Bot is ready.')
     
+    
 @client.command()
 async def joinvc(ctx, *, channel: discord.VoiceChannel):
     if ctx.voice_client is not None:
@@ -25,5 +26,11 @@ async def joinvc(ctx, *, channel: discord.VoiceChannel):
 async def leave(ctx):
     await ctx.send('See you later!')
     await ctx.voice_client.disconnect()
+    
+@client.command() #I had to use: conda install -c conda-forge ffmpeg
+async def speak(ctx):
+    ctx.voice_client.play(discord.FFmpegPCMAudio('testAudio.mp3'), after=lambda e: print('song finished'))
+    ctx.voice_client.source = discord.PCMVolumeTransformer(ctx.voice.source, 0.03)
+
 
 client.run('ODA3NDcyNTI2MjE3MDUyMTYw.YB4fZA.qof50jXFk1kKTyOnlEIaIIAJ8MI')
