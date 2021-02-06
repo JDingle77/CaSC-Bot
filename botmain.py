@@ -9,4 +9,9 @@ from discord.ext import commands
 
 client = commands.Bot(command_prefix = '!')
 
+
+@client.event
+async def on_ready():
+    print('Bot is ready.')
+
 client.run('ODA3NDcyNTI2MjE3MDUyMTYw.YB4fZA.qof50jXFk1kKTyOnlEIaIIAJ8MI')
