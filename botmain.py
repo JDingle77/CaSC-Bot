@@ -5,13 +5,11 @@ Created on Fri Feb  5 21:08:50 2021
 @author: nathan
 """
 #basic stuff
-import asyncio
 import random
 import discord
 from discord.ext import commands
 
 #text to speech
-import json
 from ibm_watson import TextToSpeechV1
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 url = 'https://api.us-south.text-to-speech.watson.cloud.ibm.com/instances/e432d9e8-d8a4-4c16-b7d5-26ce1a966ffc'
