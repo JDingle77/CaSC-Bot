@@ -22,10 +22,30 @@ text_to_speech.set_service_url(url)
 
 #prefix
 client = commands.Bot(command_prefix = '!')
-
-@client.event
+@client.command()
 async def on_ready():
     print('Bot is ready.')
+    await client.change_presence(activity=discord.Game("!info for introduction!"))
+    
+@client.command()
+async def info(ctx):
+    embed=discord.Embed(title="HI!", url="https://www.youtube.com/watch?v=KxGRhd_iWuE", description="I'm CaSC, the Connections-and-Self-Care discord bot!\nI have two main functions, motivation and connect 4!", color=0xFF5733)
+    embed.set_thumbnail(url="https://i.ytimg.com/vi/kDY1y0OL50A/hqdefault.jpg")
+    await ctx.send(embed=embed)
+    
+    embed=discord.Embed(title="Motivation!", url="https://www.youtube.com/watch?app=desktop&v=kGOQfLFzJj8", description="I can send and read you motivational messages! You can do it!", color=0xB3DB20)
+    embed.set_thumbnail(url="https://i.ytimg.com/vi/kGOQfLFzJj8/hqdefault.jpg")
+    embed.add_field(name="!join", value="I'll join the voice channel you are currently in! The more the merrier!", inline=False)
+    embed.add_field(name="!motivate",value="I'll send and read you a motivational quote! But I can only read it outloud if I'm in the voice call with you :)", inline=False)
+    embed.add_field(name="!leave", value="Once you're motivated enough, I'll leave and let you do great things in life!")
+    await ctx.send(embed=embed)
+    
+    embed=discord.Embed(title="Connect4!", url="https://www.youtube.com/watch?v=KN3nohBw_CE",description="With me, you can play connect 4 with your favorite discord buddies!\nHere are the commands:", color=discord.Color.blue())
+    embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/659562869041659919/807889690920615936/connect4.png")
+    embed.add_field(name="!connect4", value="Starts the game of connect 4! An empty connect 4 board will appear and players can drop in pucks by typing the numbers 0-6!", inline=False)
+    embed.add_field(name="!quit",value="Quits the game and resets the board!.", inline=False)
+    embed.add_field(name="IMPORTANT NOTE:", value="Cannot use non-connect4 functions while in a game of connect 4.")
+    await ctx.send(embed=embed)
     
     
 @client.command()
