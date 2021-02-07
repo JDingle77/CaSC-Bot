@@ -20,6 +20,6 @@ async def ping(ctx):
 
 @client.command()
 async def image(ctx):
-    await ctx.send(file=discord.File('Connect4Board'))
+    await ctx.send(file=discord.File('Connect4Board.png'))
 
 client.run('ODA3NDcyNTI2MjE3MDUyMTYw.YB4fZA.qof50jXFk1kKTyOnlEIaIIAJ8MI')
