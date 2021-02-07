@@ -2,7 +2,7 @@
 """
 Created on Fri Feb  5 21:08:50 2021
 
-@author: nathan
+@authors: Sammy, James, Joshua, Nathan
 """
 #basic stuff
 import asyncio
