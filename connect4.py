@@ -163,7 +163,7 @@ class MyClient(discord.Client):
             turn = 0;
             coords = return_coords()
             def is_correct(x): 
-                return int(x.content) <= 6 and int(x.content) >= 0 and x.content.isdigit()
+                return int(x.content) <= 6 and int(x.content) >= 0 and x.content.isdigit() and x.channel == message.channel
             while not game_over:
                 
                
