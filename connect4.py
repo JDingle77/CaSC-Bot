@@ -221,4 +221,4 @@ class MyClient(discord.Client):
             pygame.display.quit()
             pygame.quit()
 client = MyClient()
-client.run('ODA3NDcyNTI2MjE3MDUyMTYw.YB4fZA.qof50jXFk1kKTyOnlEIaIIAJ8MI')
+client.run('token')
